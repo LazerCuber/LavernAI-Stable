@@ -7,7 +7,7 @@
 I'll put more stuff and features on the dev branch (soon)
 Note: this is still using charaCloud as a character storing database so if the database is down, Lavern is also down lol
 
-## How to install
+### How to install
 ### In Detail:
 * [Install with KoboldAI](https://github.com/TavernAI/TavernAI/wiki/How-to-install)<br>
 * [Install with NovelAI](https://github.com/TavernAI/TavernAI/wiki/How-to-install-Novel)<br>
