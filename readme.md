@@ -4,8 +4,11 @@
 - Fix Tavern designs and css bugs
 - 1.5 coming soon
 
-I'll put more stuff and features on the dev branch (soon)
+I'll put more stuff and features on the test version (soon)
 Note: this is still using charaCloud as a character storing database so if the database is down, Lavern is also down lol
+
+## Dev Log
+(soon)
 
 ## How to install
 ### In Detail:
