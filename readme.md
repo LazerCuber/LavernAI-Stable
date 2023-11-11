@@ -11,7 +11,7 @@ Note: this is still using charaCloud as a character storing database so if the d
 (soon)
 
 
-### Briefly:
+## How to install:
 1. Download LavernAI (Preferably the download code zip version)
 2. Install [Node.js v19.1.0](https://nodejs.org/download/release/v19.1.0/)
 3. Run Start.bat (or use command: *npm install*, *node server.js*)
