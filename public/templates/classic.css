@@ -15,7 +15,7 @@
 
 body {
     margin: 0;
-    background-image: linear-gradient(rgba(19,21,44,0.75), rgba(19,21,44,0.75)), url(../backgrounds/tavern.png);
+    background-image: linear-gradient(rgba(19,21,44,0.75), rgba(19,21,44,0.75)), url(../backgrounds/tavern.avif);
     font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     background-size: auto 100%;
     background-repeat: no-repeat;
@@ -290,7 +290,7 @@ pre {
     margin-left: 4px;
     display: block;
     height: 100%;
-    background: url('../img/send3.png') no-repeat top left;
+    background: url('../img/send3.avif') no-repeat top left;
     background-size: 26px auto;
     background-position: center center;
     outline:          none;
@@ -315,7 +315,7 @@ pre {
     position: block;
     width:40px;
     height: 40px;
-    background-image: url('../img/options2.png');
+    background-image: url('../img/options2.avif');
     background-size: contain;
     background-repeat: no-repeat;
     
@@ -1012,7 +1012,7 @@ input[type=submit], input[type=button] {
     background-repeat: no-repeat;
     background-size: 28px;
     background-position: 92px 5px;
-    /* background-image: url('img/book5.png'); */
+    /* background-image: url('img/book5.avif'); */
     width: 92%;
     height: 40px;
     font-weight: bold;
@@ -1032,7 +1032,7 @@ input[type=submit], input[type=button] {
     background-repeat: no-repeat;
     background-size: 28px;
     background-position: 92px 5px;
-    /* background-image: url('img/book5.png'); */
+    /* background-image: url('img/book5.avif'); */
     width: 143px;
     height: 48px;
     font-weight: bold;
@@ -1977,7 +1977,7 @@ input[type="range"]::-ms-thumb {
     display: block;
     transition: 0.3s;
     /*background-color: #5b9541;/*#19d28f;*/
-    background-image: url(../img/padlock_unlock.png);
+    background-image: url(../img/padlock_unlock.avif);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0 3px;
@@ -2000,7 +2000,7 @@ input[type="range"]::-ms-thumb {
 .toggle_lock[type="checkbox"]:checked:before {
 
     margin-left:3px;
-    background-image: url(../img/padlock.png);
+    background-image: url(../img/padlock.avif);
     background-repeat: no-repeat;
     background-size: contain;
     width: 27px;
@@ -2164,7 +2164,7 @@ label.checkbox :checked + span:after {
     margin-left: 4px;
 }
 #worldinfo-import {
-    background-image: url(../img/import.png);
+    background-image: url(../img/import.avif);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0 10px;
@@ -2927,16 +2927,16 @@ li.folder:not(.opened) > .children > li.folder:not(.opened) > div {
     background-size: cover;
 }
 .character-screen .folder.opened > div:first-child > .avatar {
-    background-image: url("../img/folder_active.png");
+    background-image: url("../img/folder_active.avif");
 }
 .character-screen .folder:not(.opened) > div:first-child > .avatar {
-    background-image: url("../img/folder.png");
+    background-image: url("../img/folder.avif");
 }
 .character-screen .folder.empty.opened > div:first-child > .avatar {
-    background-image: url("../img/folder_active_empty.png");
+    background-image: url("../img/folder_active_empty.avif");
 }
 .character-screen .folder.empty:not(.opened) > div:first-child > .avatar {
-    background-image: url("../img/folder_empty.png");
+    background-image: url("../img/folder_empty.avif");
 }
 
 /* "main" section of folders/content */
@@ -2981,12 +2981,12 @@ li.folder:not(.opened) > .children > li.folder:not(.opened) > div {
 .folder .delete {
     right: 0em;
     background-position-x: 0em;
-    background-image: url("../img/del_mes.png");
+    background-image: url("../img/del_mes.avif");
 }
 .folder .rename {
     right: 3em;
     background-position-x: 1em;
-    background-image: url("../img/quill.png");
+    background-image: url("../img/quill.avif");
 }
 
 
