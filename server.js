@@ -1,5 +1,7 @@
+var compression = require('compression')
 var express = require('express');
 var app = express();
+app.use(compression())
 var fs = require('fs');
 const readline = require('readline');
 const open = require('open');
@@ -23,6 +25,8 @@ function isUrl(str) {
         return false;
     }
 }
+
+
 const sharp = require('sharp');
 sharp.cache(false);
 const path = require('path');
