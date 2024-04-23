@@ -693,7 +693,7 @@ app.post("/createcharacter", urlencodedParser, async function(request, response)
         if(!fs.existsSync(chatsPath+target_img) )fs.mkdirSync(chatsPath+target_img);
 
         let filedata = request.file;
-        var fileType = ".png";
+        var fileType = ".avif";
         var img_file = "ai";
         var img_path = "public/img/";
         
@@ -701,7 +701,7 @@ app.post("/createcharacter", urlencodedParser, async function(request, response)
         char = JSON.stringify(char);
         if(!filedata){
             
-            await charaWrite('./public/img/fluffy.png', char, charactersPath + target_img, characterFormat, response);
+            await charaWrite('./public/img/fluffy.avif', char, charactersPath + target_img, characterFormat, response);
             
         }else{
             
@@ -1228,7 +1228,7 @@ app.post("/importworld", urlencodedParser, async function(request, response){
 app.post("/getbackgrounds", jsonParser, function(request, response){
     var images = getImages("public/backgrounds");
     if(is_colab === true){
-        images = ['tavern.png'];
+        images = ['tavern.avif'];
     }
     response.send(JSON.stringify(images));
     
@@ -1355,6 +1355,7 @@ app.post("/downloadbackground", urlencodedParser, function(request, response){
     if (filedata.mimetype == "image/gif") fileType = ".gif";
     if (filedata.mimetype == "image/bmp") fileType = ".bmp";
     if (filedata.mimetype == "image/webp") fileType = ".webp";
+    if (filedata.mimetype == "image/avif") fileType = ".avif";
     fs.copyFile(img_path+img_file, 'public/backgrounds/'+img_file+fileType, (err) => {
         if(err) {
             
@@ -2058,14 +2059,14 @@ app.post("/importcharacter", urlencodedParser, async function(request, response)
                         let pre_data = {"name": jsonData.name, "description": jsonData.description, "personality": jsonData.personality, "first_mes": jsonData.first_mes, "avatar": 'none', "chat": Date.now(), "mes_example": jsonData.mes_example, "scenario": jsonData.scenario};
                         let char = charaFormatData(pre_data);
                         char = JSON.stringify(char);
-                        await charaWrite('./public/img/fluffy.png', char, charactersPath + img_name, characterFormat);
+                        await charaWrite('./public/img/fluffy.avif', char, charactersPath + img_name, characterFormat);
                         response.status(200).send({file_name: img_name});
                     }else if(jsonData.char_name !== undefined){//json Pygmalion notepad
                         img_name = setCardName(jsonData.char_name);
                         let pre_data = {"name": jsonData.char_name, "description": jsonData.char_persona, "personality": '', "first_mes": jsonData.char_greeting, "avatar": 'none', "chat": Date.now(), "mes_example": jsonData.example_dialogue, "scenario": jsonData.world_scenario};
                         let char = charaFormatData(pre_data);
                         char = JSON.stringify(char);
-                        await charaWrite('./public/img/fluffy.png', char, charactersPath + img_name, characterFormat);
+                        await charaWrite('./public/img/fluffy.avif', char, charactersPath + img_name, characterFormat);
                         response.status(200).send({file_name: img_name});
                     }else{
                         console.log('Incorrect character format .json');

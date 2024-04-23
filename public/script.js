@@ -13,7 +13,7 @@ import {SystemPromptModule} from "./class/SystemPrompt.js";
 import {Tavern} from "./class/Tavern.js";
 var token;
 var data_delete_chat = {};
-var default_avatar = 'img/fluffy.png';
+var default_avatar = 'img/fluffy.avif';
 var user_avatar = 'you.png';
 var requestTimeout = 60*1000;
 var max_context = 2048;//2048;
@@ -56,7 +56,7 @@ var chloeMes = {
         create_date: 0,
         mes: '*You went inside. The air smelled of fried meat, tobacco and a hint of wine. A dim light was cast by candles, and a fire crackled in the fireplace. It seems to be a very pleasant place. Behind the wooden bar is an elf waitress, she is smiling. Her ears are very pointy, and there is a twinkle in her eye. She wears glasses and a white apron. As soon as she noticed you, she immediately came right up close to you.*\n\n' +
             ' Hi! How is your day going?' +
-            '<div id="characloud_img"><img src="img/tavern.png" id="chloe_star_dust_city"></div>\n<a id="verson"  target="_blank"><a href="https://boosty.to/tavernai" target="_blank"><div id="characloud_url"><img src="img/heart.png" style="width:18px; heigth:18px; margin-right:2px;"><div id="characloud_title">Support</div></div></a><br><br><br><br>',
+            '<div id="characloud_img"><img src="img/tavern.avif" id="chloe_star_dust_city"></div>\n<a id="verson"  target="_blank"><a href="https://boosty.to/tavernai" target="_blank"><div id="characloud_url"><img src="img/heart.avif" style="width:18px; heigth:18px; margin-right:2px;"><div id="characloud_title">Support</div></div></a><br><br><br><br>',
         chid: -2
     };
 export var chat = [chloeMes];
@@ -144,7 +144,7 @@ export function characterAddedSign(file_name, alert_text = 'Character created'){
     if(file_name) {
         $prev_img.children('img').attr('src', 'characters/'+file_name+'.'+characterFormat);
     } else {
-        $prev_img.children('img').attr('src', 'img/fluffy.png');
+        $prev_img.children('img').attr('src', 'img/fluffy.avif');
     }
     $('#rm_info_avatar').append($prev_img);
     select_rm_info(alert_text);
@@ -334,7 +334,7 @@ $(document).ready(function(){
         // // else
         // //     is_room = false;
 
-        let defaultImg = "img/fluffy.png";
+        let defaultImg = "img/fluffy.avif";
 
         $("#rm_print_rooms_block").empty();
         Rooms.id.forEach(function(room) {
@@ -1039,7 +1039,7 @@ $(document).ready(function(){
             //console.log(getData.length);
             for(var i = 0; i < getData.length; i++) {
                 //console.log(1);
-                $("#bg_menu_content").append("<div class=bg_example><img bgfile='"+getData[i]+"' class=bg_example_img src='backgrounds/"+getData[i]+"'><img bgfile='"+getData[i]+"' class=bg_example_cross src=img/cross.png></div>");
+                $("#bg_menu_content").append("<div class=bg_example><img bgfile='"+getData[i]+"' class=bg_example_img src='backgrounds/"+getData[i]+"'><img bgfile='"+getData[i]+"' class=bg_example_cross src=img/cross.avif></div>");
             }
             //var aa = JSON.parse(getData[0]);
             //const load_ch_coint = Object.getOwnPropertyNames(getData);
@@ -1232,20 +1232,20 @@ $(document).ready(function(){
         var avatarImg = "User Avatars/"+user_avatar;
         if(!mes.is_user){
             if(Characters.selectedID === undefined) {
-                avatarImg = "img/chloe_summer.png";
+                avatarImg = "img/chloe_summer.avif";
             } else {
                 //mes.chid = mes.chid || parseInt(Characters.selectedID);
                 if(!is_room)
                 {
                     mes.chid = parseInt(Characters.selectedID);     // TODO: properly establish persistent ids
-                    avatarImg = Characters.id[mes.chid].filename == 'none' ? "img/fluffy.png" : "characters/"+Characters.id[Characters.selectedID].filename + "?v=" + Date.now();
+                    avatarImg = Characters.id[mes.chid].filename == 'none' ? "img/fluffy.avif" : "characters/"+Characters.id[Characters.selectedID].filename + "?v=" + Date.now();
                 }
                 else
                 {
                     if(mes.chid === undefined)
                         mes.chid = parseInt(Characters.selectedID);
                     if(Characters.id[mes.chid] !== undefined)
-                        avatarImg = Characters.id[mes.chid].filename == 'none' ? "img/fluffy.png" : "characters/"+Characters.id[mes.chid].filename + "?v=" + Date.now();
+                        avatarImg = Characters.id[mes.chid].filename == 'none' ? "img/fluffy.avif" : "characters/"+Characters.id[mes.chid].filename + "?v=" + Date.now();
                     else
                         avatarImg = undefined;
                 }
@@ -1289,19 +1289,19 @@ $(document).ready(function(){
             // message content
             messageBlock.append('<div class="mes_text"></div>');
 
-            container.append('<div title="Edit" class="mes_edit"><img src="img/scroll.png"></div>');                // edit button
+            container.append('<div title="Edit" class="mes_edit"><img src="img/scroll.avif"></div>');                // edit button
             let editMenu = $('<div class="edit_block"></div>');                                                         // edit menu shown when edit button is pressed
-                editMenu.append('<div class="mes_edit_done"><img src="img/done.png"></div>');                           // confirm button
-                editMenu.append('<div class="mes_edit_clone" title="Create copy"><img src=img/clone.png></div>');
-                editMenu.append('<div class="mes_edit_delete" title="Delete"><img src=img/del_mes.png></div>');
-                editMenu.append('<div class="mes_up" title="Move up"><img src=img/arrow_up.png></div>');
-                editMenu.append('<div class="mes_down"><img src="img/arrow_down.png" title="Move down"></div>');
-                editMenu.append('<div class="mes_edit_cancel"><img src="img/cancel.png"></div>');                       // cancel (close menu)
+                editMenu.append('<div class="mes_edit_done"><img src="img/done.avif"></div>');                           // confirm button
+                editMenu.append('<div class="mes_edit_clone" title="Create copy"><img src=img/clone.avif></div>');
+                editMenu.append('<div class="mes_edit_delete" title="Delete"><img src=img/del_mes.avif></div>');
+                editMenu.append('<div class="mes_up" title="Move up"><img src=img/arrow_up.avif></div>');
+                editMenu.append('<div class="mes_down"><img src="img/arrow_down.avif" title="Move down"></div>');
+                editMenu.append('<div class="mes_edit_cancel"><img src="img/cancel.avif"></div>');                       // cancel (close menu)
             container.append(editMenu);
 
             /* Swipes */
-            container.append('<div class="swipe_left"><img src="img/swipe_left.png"></div>');
-            container.append('<div class="swipe_right"><img src="img/swipe_right.png"></div>');
+            container.append('<div class="swipe_left"><img src="img/swipe_left.avif"></div>');
+            container.append('<div class="swipe_right"><img src="img/swipe_right.avif"></div>');
 
             let tokenCounter = $('<div class="token_counter" title="Token count"></div>');         // token count
             container.append(tokenCounter);
@@ -2609,7 +2609,7 @@ $(document).ready(function(){
             if(!characterNameList.includes(character.name))
                 $("#room_character_select_items")
                     .append('<div class="avatar" title="'+character.name+'" ch_name="'+character.name+'" style="position: relative;">'+
-                    '<img src="characters/'+character.filename+'"><img src="../img/cross.png" class="ch_select_cross">' +
+                    '<img src="characters/'+character.filename+'"><img src="../img/cross.avif" class="ch_select_cross">' +
                     '<input type="hidden" name="room_characters" value="'+character.name+'" disabled>'+
                     '</div>');
             characterNameList.push(character.name);
@@ -2640,7 +2640,7 @@ $(document).ready(function(){
             $("#room_character_selected_items")
                 .append('<div class="avatar" title="'+Characters.id[characterId].name+'" ch_name="'+Characters.id[characterId].name+'" style="position: relative;">'+
                 '<img src="characters/'+Characters.id[characterId].filename+'">'+
-                '<img src="../img/cross.png" class="ch_select_cross">' +
+                '<img src="../img/cross.avif" class="ch_select_cross">' +
                 '<input type="hidden" name="character_names" value="'+Characters.id[characterId].name+'" disabled>'+
                 '</div>');
         });
@@ -2648,7 +2648,7 @@ $(document).ready(function(){
             if(!Rooms.selectedCharacterNames.includes(character.name))
                 $("#room_character_select_items")
                     .append('<div class="avatar" title="'+character.name+'" ch_name="'+character.name+'" style="position: relative;">'+
-                    '<img src="characters/'+character.filename+'"><img src="../img/cross.png" class="ch_select_cross">' +
+                    '<img src="characters/'+character.filename+'"><img src="../img/cross.avif" class="ch_select_cross">' +
                     '<input type="hidden" name="character_names" value="'+character.name+'" disabled>'+
                     '</div>');
         });
@@ -3065,7 +3065,7 @@ $(document).ready(function(){
                     if (this_bg_style.includes('url(')) {
                         $('#bg1').css('display', 'block');
                         $('#bg2').css('display', 'block');
-                        this_bg_style = this_bg_style.replace(/url\(['"]?([^'"]*)['"]?\)/i, 'url("../backgrounds/tavern.png")');
+                        this_bg_style = this_bg_style.replace(/url\(['"]?([^'"]*)['"]?\)/i, 'url("../backgrounds/tavern.avif")');
                         $('#bg').css('background-image', this_bg_style);
                     }else{
                         this_bg_style = 'none';
@@ -3378,7 +3378,7 @@ $(document).ready(function(){
                             $('#bg'+number_bg).css('background-image', this_bg_style.replace(/url\(['"]?([^'"]*)['"]?\)/i, 'url("'+e.target.result+'")'));
                         }
                         //$('#bg'+number_bg).css('background-image', 'linear-gradient(rgba(19,21,44,0.75), rgba(19,21,44,0.75)), url('+e.target.result+')');
-                        $("#form_bg_download").after("<div class=bg_example><img bgfile='"+html+"' class=bg_example_img src='backgrounds/"+html+"'><img bgfile='"+html+"' class=bg_example_cross src=img/cross.png></div>");
+                        $("#form_bg_download").after("<div class=bg_example><img bgfile='"+html+"' class=bg_example_img src='backgrounds/"+html+"'><img bgfile='"+html+"' class=bg_example_cross src=img/cross.avif></div>");
                     },
                     error: function (jqXHR, exception) {
                         console.log(exception);
@@ -3857,7 +3857,7 @@ $(document).ready(function(){
             $("#user_avatar_block").html('');
             for(var i = 0; i < getData.length; i++) {
                 //console.log(1);
-                $("#user_avatar_block").append('<div imgfile="'+getData[i]+'" class=avatar><img class="user_avatar_img" src="User Avatars/'+getData[i]+'"><img src="../img/cross.png" class="user_avatar_cross"></div>');
+                $("#user_avatar_block").append('<div imgfile="'+getData[i]+'" class=avatar><img class="user_avatar_img" src="User Avatars/'+getData[i]+'"><img src="../img/cross.avif" class="user_avatar_cross"></div>');
             }
             //var aa = JSON.parse(getData[0]);
             //const load_ch_coint = Object.getOwnPropertyNames(getData);
@@ -6092,7 +6092,7 @@ $(document).ready(function(){
                 return;
 
             characloud_characters_rows[row_i] = 0;
-            $('#characloud_characters').append('<div category="' + vl(category.name) + '" class="characloud_characters_category_title">' + vl(category.name_view.replace('$', '')) + '</div><div characloud_row_id="' + row_i + '" id="characloud_characters_row' + row_i + '" class="characloud_characters_row"><div class="characloud_swipe_rigth"><img src="img/swipe_right.png"></div><div class="characloud_swipe_left"><img src="img/swipe_left.png"></div></div>');
+            $('#characloud_characters').append('<div category="' + vl(category.name) + '" class="characloud_characters_category_title">' + vl(category.name_view.replace('$', '')) + '</div><div characloud_row_id="' + row_i + '" id="characloud_characters_row' + row_i + '" class="characloud_characters_row"><div class="characloud_swipe_rigth"><img src="img/swipe_right.avif"></div><div class="characloud_swipe_left"><img src="img/swipe_left.avif"></div></div>');
             $('#characloud_characters_row' + row_i).append('<div class="characloud_characters_row_scroll"></div>');
 
             let row = $('#characloud_characters_row' + row_i);
@@ -6113,7 +6113,7 @@ $(document).ready(function(){
             });
 
             category.characters.forEach(function (item, i) {
-                let link = `<img src="../img/vdots.png">`;
+                let link = `<img src="../img/vdots.avif">`;
                 $('#characloud_characters_row' + row_i).children('.characloud_characters_row_scroll').append(charaCloud.getCharacterDivBlock(item, charaCloudServer));
                 //$('#characloud_character_block'+char_i).children('.characloud_character_block_card').children('.avatar').children('img').lazyLoadXT({edgeX:500, edgeY:500});
                 const $char_block = $('.characloud_character_block[public_id="' + item.public_id + '"]');
@@ -6870,7 +6870,7 @@ $(document).ready(function(){
     }
     $('.characloud_user_profile_avatar_img').on('error', function () { // Set default avatar
         
-        $(this).attr('src', '../img/default_avatar.png');
+        $(this).attr('src', '../img/default_avatar.avif');
 
     });
     $('.characloud_user_profile_avatar').click(function(){
@@ -6993,7 +6993,7 @@ $(document).ready(function(){
                                 //$('.character-gallery-content').append(`<div user_name="${data.name}" public_id_short="${item.public_id_short}" class="user_profile_character"><div class="user_profile_character_container"><img class="user_profile_character_img" src="${charaCloudServer}/${data.name}/${item.public_id_short}.webp"><img class="user_profile_character_delete" src="./img/cross.png"></div></div>`);
                             
                                 if(login === user_name.toLowerCase()){
-                                    $('.character-gallery-content .characloud_character_block  .characloud_character_block_card').last().append('<img class="user_profile_character_delete" src="./img/cross.png">');
+                                    $('.character-gallery-content .characloud_character_block  .characloud_character_block_card').last().append('<img class="user_profile_character_delete" src="./img/cross.avif">');
                                 }
                             }
                         });
@@ -7011,8 +7011,8 @@ $(document).ready(function(){
                                 if(item.moderation === true && item.status === 2){
                                     is_show_new_moderation_gallery = true;
                                     let $lastAppendedElement = $('.new-mod-character-gallery-content').append(charaCloud.getCharacterDivBlock(item, charaCloudServer, 'moderation')).last();
-                                    //$('.character-gallery-content').append(`<div user_name="${data.name}" public_id_short="${item.public_id_short}" class="user_profile_character"><div class="user_profile_character_container"><img class="user_profile_character_img" src="${charaCloudServer}/${data.name}/${item.public_id_short}.webp"><img class="user_profile_character_delete" src="./img/cross.png"></div></div>`);
-                                    $('.new-mod-character-gallery-content .characloud_character_block  .characloud_character_block_card').last().append('<img class="user_profile_character_delete" src="./img/cross.png">');
+                                    //$('.character-gallery-content').append(`<div user_name="${data.name}" public_id_short="${item.public_id_short}" class="user_profile_character"><div class="user_profile_character_container"><img class="user_profile_character_img" src="${charaCloudServer}/${data.name}/${item.public_id_short}.webp"><img class="user_profile_character_delete" src="./img/cross.avif"></div></div>`);
+                                    $('.new-mod-character-gallery-content .characloud_character_block  .characloud_character_block_card').last().append('<img class="user_profile_character_delete" src="./img/cross.avif">');
                                 }
                                 
                             });
@@ -7029,8 +7029,8 @@ $(document).ready(function(){
                                 if(item.moderation === true && item.status === 4){
                                     is_show_edit_moderation_gallery = true;
                                     let $lastAppendedElement = $('.edit-mod-character-gallery-content').append(charaCloud.getCharacterDivBlock(item, charaCloudServer, 'moderation')).last();
-                                    //$('.character-gallery-content').append(`<div user_name="${data.name}" public_id_short="${item.public_id_short}" class="user_profile_character"><div class="user_profile_character_container"><img class="user_profile_character_img" src="${charaCloudServer}/${data.name}/${item.public_id_short}.webp"><img class="user_profile_character_delete" src="./img/cross.png"></div></div>`);
-                                    $('.edit-mod-character-gallery-content .characloud_character_block  .characloud_character_block_card').last().append('<img class="user_profile_character_delete" type="edit_moderation" src="./img/cross.png">');
+                                    //$('.character-gallery-content').append(`<div user_name="${data.name}" public_id_short="${item.public_id_short}" class="user_profile_character"><div class="user_profile_character_container"><img class="user_profile_character_img" src="${charaCloudServer}/${data.name}/${item.public_id_short}.webp"><img class="user_profile_character_delete" src="./img/cross.avif"></div></div>`);
+                                    $('.edit-mod-character-gallery-content .characloud_character_block  .characloud_character_block_card').last().append('<img class="user_profile_character_delete" type="edit_moderation" src="./img/cross.avif">');
                                 }
                                 
                             });
