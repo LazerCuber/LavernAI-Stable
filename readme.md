@@ -1,4 +1,4 @@
-## LavernAI is heavily based on [TavernAI](https://github.com/TavernAI/TavernAI "TavernAI")
+## LavernAI is heavily based on [TavernAI](https://github.com/TavernAI/TavernAI )
 - Some UI and performance optimizations
 - Focuses on the CAI ui design (So don't expect I work on other designs)
 - Fix Tavern designs and css bugs
